@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="hibernate-frame:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="hibernate-frame-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="hibernate-frame:war exploded" />
-    </root>
-  </artifact>
-</component>
