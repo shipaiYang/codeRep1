@@ -1,4 +1,11 @@
 package org.ysp.dao;
 
-public interface IUserDao {
+import org.ysp.entity.UserInfo;
+
+import java.util.List;
+
+public interface UserDao extends BaseDao<UserInfo> {
+
+
+
 }

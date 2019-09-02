@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 @Path("/")
 @Produces({MediaType.APPLICATION_JSON})
-public interface IRestApi {
+public interface RestApi {
     /**
      * 获取所有用户信息
       * @return

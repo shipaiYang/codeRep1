@@ -1,10 +1,10 @@
 package org.ysp.api.impl;
 
-import org.springframework.orm.hibernate3.HibernateTemplate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.ysp.api.IRestApi;
-import org.ysp.dao.IUserDao;
+import org.ysp.api.RestApi;
 import org.ysp.entity.UserInfo;
+import org.ysp.service.UserService;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,13 +14,14 @@ import java.util.List;
  * @date 2019/9/2
  */
 @Component("restApi")
-public class RestApi implements IRestApi {
-
+@Slf4j
+public class RestApiImpl implements RestApi {
+    @Resource
+    private UserService userService;
 
     @Override
     public List<UserInfo> getAllUserInfo() {
 
-
-        return null;
+        return userService.getAllUserInfo();
     }
 }
