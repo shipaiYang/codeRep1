@@ -30,4 +30,9 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     public List<T> loadAll() {
         return hibernateTemplate.loadAll(entityClass);
     }
+
+    @Override
+    public void save(T entity) {
+        hibernateTemplate.save(entity);
+    }
 }
