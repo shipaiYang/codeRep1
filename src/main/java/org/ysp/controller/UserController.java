@@ -5,6 +5,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.ysp.dao.UserDao;
 import org.ysp.entity.UserInfo;
 
 import javax.annotation.Resource;
@@ -15,18 +16,16 @@ import javax.annotation.Resource;
  */
 @RequestMapping("/user")
 @Controller
-@Slf4j
 public class UserController {
     @Resource
-    private HibernateTemplate template;
+    private UserDao userDao;
 
     @RequestMapping("/saveUserInfo.do")
     @ResponseBody
     public UserInfo saveUserInfo(String name){
         UserInfo userInfo = new UserInfo();
         userInfo.setName(name);
-        template.save(userInfo);
-        log.info("userinfo:{}",userInfo);
+        userDao.save(userInfo);
         return userInfo;
     }
 
